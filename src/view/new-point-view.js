@@ -1,4 +1,3 @@
-import dayjs from 'dayjs';
 import { createOffersPriceTemplate } from './edit-point-view';
 
 const createPhotoTemplate = (photos) => {
@@ -15,7 +14,7 @@ const createPhotoTemplate = (photos) => {
 
 
 export const createNewPointTemplate = (point) => {
-  const {dateTime, startTime, endTime, pointType, destination, destinationInfo, price, offers} = point;
+  const {/*dateTime, startTime, endTime,*/ pointType, destination, destinationInfo, price, offers} = point;
 
   return `<li class="trip-events__item">
     <form class="event event--edit" action="#" method="post">
@@ -134,9 +133,3 @@ export const createNewPointTemplate = (point) => {
     </form>
   </li>`;
 };
-
-/* <img class="event__photo" src="img/photos/1.jpg" alt="Event photo">
-              <img class="event__photo" src="img/photos/2.jpg" alt="Event photo">
-              <img class="event__photo" src="img/photos/3.jpg" alt="Event photo">
-              <img class="event__photo" src="img/photos/4.jpg" alt="Event photo">
-              <img class="event__photo" src="img/photos/5.jpg" alt="Event photo"></img> */

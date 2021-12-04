@@ -12,7 +12,7 @@ import { generatePoint } from './mock/point';
 const POINT_COUNT = 15;
 
 const points = Array.from({length: POINT_COUNT}, generatePoint);
-console.log(points);
+
 
 const siteNavElement = document.querySelector('.trip-controls__navigation');
 const siteFilterElement = document.querySelector('.trip-controls__filters');

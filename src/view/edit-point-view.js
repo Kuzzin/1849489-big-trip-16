@@ -1,4 +1,3 @@
-import dayjs from 'dayjs';
 
 
 export const createOffersPriceTemplate = (offers, pointTypes) => {
@@ -22,7 +21,7 @@ export const createOffersPriceTemplate = (offers, pointTypes) => {
 
 
 export const createEditPointTemplate = (point) => {
-  const {dateTime, startTime, endTime, pointType, destination, destinationInfo, price, offers} = point;
+  const {/*dateTime, startTime, endTime,*/ pointType, destination, destinationInfo, price, offers} = point;
 
   return `<li class="trip-events__item">
     <form class="event event--edit" action="#" method="post">
