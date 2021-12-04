@@ -6,8 +6,13 @@ import { createSitePointTemplate } from './view/point-view';
 import { createUlTemplate } from './view/ul-view';
 import { createEditPointTemplate } from './view/edit-point-view';
 import { createNewPointTemplate } from './view/new-point-view';
+import { generatePoint } from './mock/point';
 
-const POINT_COUNT = 3;
+
+const POINT_COUNT = 15;
+
+const points = Array.from({length: POINT_COUNT}, generatePoint);
+console.log(points);
 
 const siteNavElement = document.querySelector('.trip-controls__navigation');
 const siteFilterElement = document.querySelector('.trip-controls__filters');
@@ -22,9 +27,9 @@ renderTemplate(siteContainerElement, createUlTemplate(), RenderPosition.BEFOREEN
 
 const siteUlElement = siteContainerElement.querySelector('.trip-events__list');
 
-for (let i = 0; i < POINT_COUNT; i++) {
-  renderTemplate(siteUlElement, createSitePointTemplate(), RenderPosition.BEFOREEND);
+for (let i = 1; i < POINT_COUNT; i++) {
+  renderTemplate(siteUlElement, createSitePointTemplate(points[i]), RenderPosition.BEFOREEND);
 }
 
-renderTemplate(siteUlElement, createEditPointTemplate(), RenderPosition.AFTERBEGIN);
-renderTemplate(siteUlElement, createNewPointTemplate(), RenderPosition.BEFOREEND);
+renderTemplate(siteUlElement, createEditPointTemplate(points[0]), RenderPosition.AFTERBEGIN);
+renderTemplate(siteUlElement, createNewPointTemplate(points[1]), RenderPosition.BEFOREEND);
